@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/* Fonte externa via importacao */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Fonte externa baixadas */
+@font-face {
+    font-family: "Android";
+    src: url("./fontes/idroid.otf") format("opentype");
+    font-weight: normal;
+}
+
+/* Variaveis para facilitar a troca de cores */
+
+:root {
+    --cor0: #ebe5c5;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas Neue", cursive;
+    --fonte-android: "Android", cursive;
+
+}
+
+
+/* Configuração global para tirar todar margem e padding (Grudar os assuntos */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+    
+}
+
+/* Classe externa usando emoji no texto */
+a.externo::after {
+    content: "\1F517"; /* Emojipedia */
+}
+
+
+/* Parte inicial, título do Titulo do Site */
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* Degrade na parte do cabecalho */
+    min-height: 150px; /* Deixar a area maior */
+    text-align: center;/* Centralizando titulo, talvez seja necessario colocar no H1 e P*/
+    padding-top: 40px; /* Distanciar o titulo do barra */
+}
+/* Tudo que está dentro do Header você precisa criar conforme modelos abaixo */
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px; /* Distanciar o H1 (titulo) do P */
+    font-size: 3em; /* Aumentar o titulo */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.514); /* Sombriamento no titulo */
+    font-weight: normal; /* tirar o negrito do H1, OPCIONAL */
+    
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao); /* Variavel de letra */
+    font-size: 1.2em; /* Aumentar tamanho da letra */
+    max-width: 500px; /* Deixar centralizado */
+    padding-left: 10px; /* Deixar um espaço lado esquerdo */
+    padding-right: 10px; /* Deixar um espaço lado direito */
+    margin: auto; /* Centralizar texto */
+     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.514); /* Sombra no paragrafo do titulo */ 
+     margin-bottom: 20px;
+}
+
+/* MENU */
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.336); /* sombriado menu */
+}
+
+nav > a {
+    color: var(--cor1); /* Cor da letra do menu */
+    padding: 10px; /* Espaçar um menu de outro */
+    border-radius: 3px; /* Arredondar borda do menu */
+    text-decoration: none; /* Retirar sublinhado dos links do menu */
+    font-weight: bold; /* Menu com letra em negrito */
+    transition-duration: 0.5s; /* Se quiser que a transição demore um pouco mais no menu ao passar o mouse */
+}
+
+nav > a:hover {
+    background-color: var(--cor3); /* Ao passar o mouse mudará de cor */
+    color: var(--cor5); /* Texto mudara também para uma cor mais escura */
+}
+
+
+/* Parte da escrita e texto */
+main {
+    /* Responsivo - Adaptando o conteudo Textos, não quebrar telas */
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto; /* Vai ficar com margem centralizado */
+    margin-bottom: 30px; /*Margin no final separando do rodape */
+    padding: 20px; /*Margin lateral */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.397); /*Sombriamento lateral na divisão do texto */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    /* Fundo parte principal*/
+    background-color: white;
+}
+
+/* Configuracao dentro do paragrafo */
+main p {
+    margin: 15px 0px; /* Margem do texto em cima, ao lado e em baixo */
+    text-align: justify; /* Justificar o texto */
+    text-indent: 30px; /* Recuo do paragrafo */
+    font-size: 1em; /* tamanho da fonte e texto */
+    line-height: 2em; /* Espaçamento entre as linhas */
+}
+
+/* Configurando Texto em Negrito */
+main strong {
+    color: var(--cor4); /* Cor do negrito */
+    font-weight: bold; /* Letra em negrito */
+    
+}
+
+/* Configurando links */
+main a {
+    text-decoration: none;
+    font-weight: bold; /* Colocar em negrito */
+    color: var(--cor5); /* Cor do negrito */
+    background-color: var(--cor1); /* Cor do Marca texto */
+    padding: 2px 6px; /* Tamanho do marca texto */
+}
+/* Configurando links ao passar o mouse */
+main a:hover {
+    text-decoration: underline; /* Criar um underline quando o mouse passar sobre */
+    color: var(--cor4);
+}
+
+
+/* Para que a imagem não quebre */
+main img {
+    width: 100%;
+}
+
+/* configurando video youtube */
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56.6%;
+
+    position: relative; /*  */
+}
+
+/* complementando o de cima */
+div.video > iframe {
+    position: absolute;
+    top: 5%; /* distancia superios video */
+    left: 5%; /* distancia lateral margem e video */
+    width: 90%;
+    height: 90%;
+}
+
+/* Se você não fizer uma imagem menor tipo as outroas do android e da irina, você pode criar esse parametro (class)para diminuir */
+main img.pequena {
+    max-width: 350px;
+    margin: auto;
+    display: block;
+}
+
+main h1 {
+    color:var(--cor5); /* Cor do titulo */
+    font-family: var(--fonte-android); /* Tipo de fonte */
+    font-weight: normal; /* tira negrito do h1, OPCIONAL */
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android); /* Tipo de fonte */
+    color: var(--cor4); /* Cor do titulo II*/
+    font-size: 1.3em; /* Tamanho do titulo II*/
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* Gradiente no Marca Texto do titulo II*/
+    text-indent: 8px; /* Identação do titulo II*/
+    font-weight: normal; /* tira negrito do h1, OPCIONAL */
+
+}
+
+/* Configurando aside parte quer aprender mais */
+aside {
+    background-color: var(--cor1); /* cor */
+    padding: 10px; /* margim entre o texto */
+    border-radius: 10px; /* borda redonda */
+}
+
+aside > ul {
+    list-style-type: "\2714\00A0\00A0"; /* Codigo emojipedia e codigos para colocar espacos entre a lista */
+    list-style-position: inside; /* Posicionar lista para dentro */
+    columns: 2; /* dividir a lista em duas */
+}
+
+/* Configurando o titulo do aside */
+aside > h3 {
+    background-color: var(--cor4); /* cor fundo */
+    color: white; /* cor texto */
+    padding: 5px; /* tamanho da margem */
+    margin: -10px -10px 0px -10px; /* margem negativa pra ficar do tamanho da margem debaixo */
+    border-radius: 10px 10px 0px 0px; /* aredondar a borda de cima e debaixo não */
+}
+
+/* Organizando rodape */
+footer {
+    background-color: var(--cor5);
+    color:white; /* Cor texto */
+    text-align: center; /* Centralizar texto */
+    font-size: 0.8em; /* Tamanho letra */
+    padding: 5px; /* Tamanho margem */
+}
+
+
+/* Organizando link rodape */
+footer a {
+    color: white; /* cor link rodape */
+    font-weight: bolder; /* negrito link rodape */
+    text-decoration: none; /* sem underline link rodape */
+}
+
+/* Estilo no link do rodape usando hover */
+footer a:hover {
+    text-decoration: underline; /* underline */
+    color:var(--cor1) /* cor */
+}
